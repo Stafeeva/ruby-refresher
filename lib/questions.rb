@@ -121,8 +121,7 @@ end
 def average_of_array(array)
   sum = 0.0
   array.each { |integer| sum += integer }
-  average = ( sum / array.length + 1 ).to_s if sum % 1 > 0.5
-  average = ( sum / array.length ).to_s
+  average = (sum / array.length).ceil
 end
 
 # get all the elements in an array, up until the first element
