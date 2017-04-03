@@ -1,17 +1,21 @@
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
+  array.each { |element| array.delete(element) if element.start_with?('a') == false }
 end
 
 # keep only the elements that start with a vowel
 def select_elements_starting_with_vowel(array)
+  # array.each { |element| array.delete(element) if element.start_with?('/[aeiou]/') == false }
 end
 
 # remove instances of nil (but NOT false) from an array
 def remove_nils_from_array(array)
+  array.each { |element| array.delete(element) if element == nil }
 end
 
 # remove instances of nil AND false from an array
 def remove_nils_and_false_from_array(array)
+  array.select { |element| !element == false }
 end
 
 # don't reverse the array, but reverse every word inside it. e.g.
@@ -43,6 +47,7 @@ end
 # sort an array of words by their last letter, e.g.
 # ['sky', 'puma', 'maker'] becomes ['puma', 'maker', 'sky']
 def array_sort_by_last_letter_of_word(array)
+  array.sort_by { |word| word[-1] }
 end
 
 # cut strings in half, and return the first half, e.g.
@@ -68,6 +73,9 @@ end
 # even numbers come first
 # so [1, 2, 3, 4, 5, 6] becomes [[2, 4, 6], [1, 3, 5]]
 def separate_array_into_even_and_odd_numbers(array)
+  even = array.select { |number| number.even? }
+  odd = array.select { |number| !number.even? }
+  array = [even, odd]
 end
 
 # count the numbers of elements in an element which are palindromes
@@ -111,6 +119,10 @@ end
 # get the average from an array, rounded to the nearest integer
 # so [10, 15, 25] should return 17
 def average_of_array(array)
+  sum = 0.0
+  array.each { |integer| sum += integer }
+  average = ( sum / array.length + 1 ).to_s if sum % 1 > 0.5
+  average = ( sum / array.length ).to_s
 end
 
 # get all the elements in an array, up until the first element

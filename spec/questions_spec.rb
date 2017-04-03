@@ -8,7 +8,7 @@ end
 
 describe 'the Friday test :)' do
 
-  it 'select_elements_starting_with_a' do
+  fit 'select_elements_starting_with_a' do
     n = select_elements_starting_with_a ['bananas', 'apples', 'pears', 'avocados']
     expect(n).to eq ['apples', 'avocados']
   end
@@ -18,12 +18,12 @@ describe 'the Friday test :)' do
     expect(n).to eq ['omar', 'idris', 'angela']
   end
 
-  it 'remove_nils_from_array' do
+  fit 'remove_nils_from_array' do
     n = remove_nils_from_array ['a', 'b', nil, nil, false, 'c', nil]
     expect(n).to eq ['a', 'b', false, 'c']
   end
 
-  it 'remove_nils_and_false_from_array' do
+  fit 'remove_nils_and_false_from_array' do
     n = remove_nils_and_false_from_array ['a', 'b', nil, nil, false, 'c', nil]
     expect(n).to eq ['a', 'b', 'c']
   end
@@ -50,7 +50,7 @@ describe 'the Friday test :)' do
     expect(n).to eq [1, 2, 3, 4, 5]
   end
 
-  it 'array_sort_by_last_letter_of_word' do
+  fit 'array_sort_by_last_letter_of_word' do
     n = array_sort_by_last_letter_of_word ['sky', 'puma', 'maker']
     expect(n).to eq ['puma', 'maker', 'sky']
   end
@@ -71,7 +71,7 @@ describe 'the Friday test :)' do
     expect(b).to eq -7
   end
 
-  it 'separate_array_into_even_and_odd_numbers' do
+  fit 'separate_array_into_even_and_odd_numbers' do
     n = separate_array_into_even_and_odd_numbers [1, 2, 3, 4, 5, 6, 7]
     expect(n).to eq [[2, 4, 6], [1, 3, 5, 7]]
   end
@@ -106,7 +106,7 @@ describe 'the Friday test :)' do
     expect(n).to eq 'foobar'
   end
 
-  it 'average_of_array' do
+  fit 'average_of_array' do
     n = average_of_array [10, 15, 25]
     expect(n).to eq 17
   end
