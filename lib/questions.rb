@@ -137,6 +137,13 @@ end
 # pairing up elements. e.g. ['a', 'b', 'c', 'd'] becomes
 # {'a' => 'b', 'c' => 'd'}
 def convert_array_to_a_hash(array)
+  hash = {}
+  index = 0
+  while index < array.length do
+    hash[array[index]] = array[index + 1]
+    index = index + 2
+  end
+  hash
 end
 
 # get all the letters used in an array of words and return
