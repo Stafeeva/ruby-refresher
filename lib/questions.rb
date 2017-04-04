@@ -1,6 +1,6 @@
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
-  array.each { |element| array.delete(element) if element.start_with?('a') == false }
+  array.select { |element| element.start_with?('a') == true }
 end
 
 # keep only the elements that start with a vowel
@@ -121,7 +121,7 @@ end
 def average_of_array(array)
   sum = 0.0
   array.each { |integer| sum += integer }
-  average = (sum / array.length).ceil
+  average = (sum / array.length).round
 end
 
 # get all the elements in an array, up until the first element
